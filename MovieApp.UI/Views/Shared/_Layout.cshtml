@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieApp.UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container row">
+                <div class="col-md-2">
+
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Book Show</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse col-md-6" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" asp-controller="Movie" asp-action="ShowMovies">Movies</a>
+                        <a class="nav-item nav-link" asp-controller="Thetre" asp-action="ShowThetre">Thetres</a>
+                        @*<a class="nav-item nav-link disabled" href=""></a>*@
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <button class="btn btn-outline-success my-2 my-sm-0 "> <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">SIGNIN</a></button>
+                    &nbsp;
+                    <button class="btn btn-outline-success my-2 my-sm-0 "> <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="RegisterUser">SIGNUP</a></button>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - MovieApp.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

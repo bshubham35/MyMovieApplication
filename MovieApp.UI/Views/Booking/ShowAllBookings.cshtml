@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MyMovieApp.Entity.BookingModel>
+@{
+    ViewData["Title"] = "ShowAllBookings";
+}
+
+<h1>ShowAllBookings</h1>
+<hr />
+
+<hr />
+<table class="table table-bordered table-success">
+    <thead>
+        <tr>
+            <th>BookingId</th>
+            <th>MovieId</th>
+            <th>TheatreId</th>
+            <th>ShowTime</th>
+            <th>Date</th>
+            <td>UserId</td>
+            <th>Ticket Count</th>
+            @*<th>Action-1</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BookingId</td>
+                <td>@item.MovieId</td>
+                <td>@item.ThetreId</td>
+                <td>@item.MovieShowTime</td>
+                <td>@item.MovieDate</td>
+                <td>@item.UserId</td>
+                <td>@item.ticketCount</td>
+            </tr>
+        }
+    </tbody>
+</table>
